@@ -13,15 +13,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{3D4E71B0-9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{69CFD5FF-7335-422A-8FE7-6E51BE908529}"
 	ProjectSection(SolutionItems) = preProject
+		..\.editorconfig = ..\.editorconfig
 		..\.gitattributes = ..\.gitattributes
 		..\.gitignore = ..\.gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Munisio.Test", "..\test\Munisio.Test\Munisio.Test.csproj", "{2B2FBC45-FC45-4260-B612-4A6A78EBD110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munisio.Test", "..\test\Munisio.Test\Munisio.Test.csproj", "{2B2FBC45-FC45-4260-B612-4A6A78EBD110}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{5DE2B62C-8012-4E53-AE96-D1C99DECBA58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Munisio", "Munisio\Munisio.csproj", "{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munisio", "Munisio\Munisio.csproj", "{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
