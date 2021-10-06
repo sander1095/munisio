@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5979F4A3-147A-47B0-8700-E9C0D0228521}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{3D4E71B0-91B1-4D26-9042-6254934A1356}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{69CFD5FF-7335-422A-8FE7-6E51BE908529}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Munisio.Test", "..\test\Munisio.Test\Munisio.Test.csproj", "{2B2FBC45-FC45-4260-B612-4A6A78EBD110}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{5DE2B62C-8012-4E53-AE96-D1C99DECBA58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Munisio", "Munisio\Munisio.csproj", "{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Debug|x64.Build.0 = Debug|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Debug|x86.Build.0 = Debug|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Release|x64.ActiveCfg = Release|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Release|x64.Build.0 = Release|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Release|x86.ActiveCfg = Release|Any CPU
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110}.Release|x86.Build.0 = Release|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Debug|x64.Build.0 = Debug|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Debug|x86.Build.0 = Debug|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Release|x64.ActiveCfg = Release|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Release|x64.Build.0 = Release|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Release|x86.ActiveCfg = Release|Any CPU
+		{13BED201-2DAF-4A01-9C81-C5D9232C1CBA}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B2FBC45-FC45-4260-B612-4A6A78EBD110} = {5979F4A3-147A-47B0-8700-E9C0D0228521}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D129EFF6-EB24-4E01-93E7-E0A9F6A98F29}
+	EndGlobalSection
+EndGlobal
