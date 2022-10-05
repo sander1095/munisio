@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Munisio.Models;
 
-namespace Munisio
+namespace Munisio.Models
 {
     public interface IHateoasObject
     {

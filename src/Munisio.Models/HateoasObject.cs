@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Munisio
+namespace Munisio.Models
 {
     public class HateoasObject : IHateoasObject
     {
