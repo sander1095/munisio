@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munisio", "src\Munisio\Muni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munisio.Models", "src\Munisio.Models\Munisio.Models.csproj", "{184E5653-BED5-4324-86CF-B9010993E368}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Munisio.Samples.AspNetCoreWebApi", "samples\Munisio.Samples.AspNetCoreWebApi\Munisio.Samples.AspNetCoreWebApi.csproj", "{0668D607-5174-4BD2-89CB-1908382A655E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,25 +75,25 @@ Global
 		{184E5653-BED5-4324-86CF-B9010993E368}.Release|x64.Build.0 = Release|Any CPU
 		{184E5653-BED5-4324-86CF-B9010993E368}.Release|x86.ActiveCfg = Release|Any CPU
 		{184E5653-BED5-4324-86CF-B9010993E368}.Release|x86.Build.0 = Release|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Debug|x64.Build.0 = Debug|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Debug|x86.Build.0 = Debug|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Release|x64.ActiveCfg = Release|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Release|x64.Build.0 = Release|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Release|x86.ActiveCfg = Release|Any CPU
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A}.Release|x86.Build.0 = Release|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Debug|x64.Build.0 = Debug|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Debug|x86.Build.0 = Debug|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Release|x64.ActiveCfg = Release|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Release|x64.Build.0 = Release|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Release|x86.ActiveCfg = Release|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2B2FBC45-FC45-4260-B612-4A6A78EBD110} = {5979F4A3-147A-47B0-8700-E9C0D0228521}
-		{6A3B59A3-085F-4B83-B606-78EC749AA93A} = {5DE2B62C-8012-4E53-AE96-D1C99DECBA58}
+		{0668D607-5174-4BD2-89CB-1908382A655E} = {5DE2B62C-8012-4E53-AE96-D1C99DECBA58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D129EFF6-EB24-4E01-93E7-E0A9F6A98F29}
