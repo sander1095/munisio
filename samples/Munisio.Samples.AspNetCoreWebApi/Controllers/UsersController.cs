@@ -13,6 +13,7 @@ public class UsersController : ControllerBase
     {
         new(1, "Sander ten Brinke", "test@example.com"),
         new(2, "John Doe", "john@example.com"),
+        new(12, "Jack Dorsey", "jack@twitter.com"),
     };
 
     [HttpGet("{id:int:min(1)}")]
