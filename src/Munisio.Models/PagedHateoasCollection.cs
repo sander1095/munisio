@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Munisio.Models;
 
-namespace Munisio
+namespace Munisio.Models
 {
     public class PagedHateoasCollection<T> : HateoasCollection<T> where T : IHateoasObject
     {
