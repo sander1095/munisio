@@ -19,7 +19,7 @@ namespace Munisio
         {
             _target = target;
 
-            if (target.Links.All(p => p.Rel.Equals(rel, StringComparison.OrdinalIgnoreCase)))
+            if (target.Links.All(p => !p.Rel.Equals(rel, StringComparison.OrdinalIgnoreCase)))
             {
                 _link = new HateoasLink(rel, route, method);
                 _target.Links.Add(_link);
