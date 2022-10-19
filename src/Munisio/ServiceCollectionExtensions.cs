@@ -20,14 +20,14 @@ namespace Munisio
         }
 
         /// <summary>
-        /// Searches for your <see cref="IHateoasProvider{TModel}"/> and <see cref="IAsyncHateoasProvider{TModel}"/> implementations in your current assembly and registers them in a transient manner to the <paramref name="services"/> you pass in.
+        /// Searches for your <see cref="IHateoasProvider{TModel}"/> and <see cref="IAsyncHateoasProvider{TModel}"/> implementations in the assembly that calls this method and registers them in a transient manner to the <paramref name="services"/> you pass in.
         /// Don't forget to call <see cref="AddHateoas(MvcOptions)"/> so your providers will get executed at runtime!
         /// </summary>
         /// <param name="services"></param>
         /// <remarks>
         /// Calling this method is not required; it's simply convenient. If you don't want Munisio to search and register your implementations automatically, feel free to register them yourself!
         /// </remarks>
-        public static IServiceCollection AddHateoasProviders(this IServiceCollection services) => services.AddHateoasProviders(Assembly.GetExecutingAssembly());
+        public static IServiceCollection AddHateoasProviders(this IServiceCollection services) => services.AddHateoasProviders(Assembly.GetCallingAssembly());
 
         /// <summary>
         /// Searches for your <see cref="IHateoasProvider{TModel}"/> and <see cref="IAsyncHateoasProvider{TModel}"/> implementations in the <paramref name="assemblies"/> you pass in to this method. 
