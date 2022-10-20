@@ -20,6 +20,11 @@ public class UserDatabase
         }
     }
 
+    public User GetUser(int id)
+    {
+        return _users.Single(x => x.Id == id);
+    }
+
     public User? FindUser(int id)
     {
         return _users.SingleOrDefault(x => x.Id == id);

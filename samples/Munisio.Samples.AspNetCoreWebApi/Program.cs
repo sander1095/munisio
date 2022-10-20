@@ -11,8 +11,8 @@ builder.Services.AddControllers(x => x.AddHateoas()); // 1: Call AddHateoas!
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<UserDatabase>();
-builder.Services.AddSingleton<TweetDatabase>();
+builder.Services.AddScoped<UserDatabase>();
+builder.Services.AddScoped<TweetDatabase>();
 
 builder.Services.AddHateoasProviders(); // 2: Let munisio search and register your providers automatically OR
 //services.AddTransient<IHateoasProvider<Tweet>, TweetHateoasProvider>(); // 3: Do it yourself!
