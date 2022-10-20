@@ -19,6 +19,11 @@ public class TweetDatabase
         }
     }
 
+    public Tweet GetTweet(int id)
+    {
+        return _tweets.Single(x => x.Id == id && !x.IsDeleted);
+    }
+
     public Tweet? FindTweet(int id)
     {
         return _tweets.SingleOrDefault(x => x.Id == id && !x.IsDeleted);
