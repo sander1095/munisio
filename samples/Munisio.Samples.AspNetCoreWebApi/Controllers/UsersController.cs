@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
+using Munisio.Samples.AspNetCoreWebApi.Database;
 using Munisio.Samples.AspNetCoreWebApi.Models;
 
 namespace Munisio.Samples.AspNetCoreWebApi.Controllers;
@@ -9,25 +10,31 @@ namespace Munisio.Samples.AspNetCoreWebApi.Controllers;
 [Route("api/users")]
 public class UsersController : ControllerBase
 {
-    private static readonly IList<User> _users = new List<User>
+    private readonly UserDatabase _database;
+
+    public UsersController(UserDatabase database)
     {
-        new(1, "Sander ten Brinke", "test@example.com"),
-        new(2, "John Doe", "john@example.com"),
-        new(12, "Jack Dorsey", "jack@twitter.com"),
-    };
+        _database = database;
+    }
 
     [HttpGet("{id:int:min(1)}")]
+
+    [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public ActionResult<User> GetUser(int id)
     {
-        var user = _users.SingleOrDefault(x => x.Id == id);
+        var user = _database.FindUser(id);
 
         return user is null ? NotFound() : Ok(user);
     }
 
     [HttpPatch("{id:int:min(1)}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult UpdateUserData(int id, UpdateUserDataRequestModel requestModel)
     {
-        var user = _users.SingleOrDefault(x => x.Id == id);
+        var user = _database.FindUser(id);
 
         if (user is null)
         {
@@ -48,9 +55,12 @@ public class UsersController : ControllerBase
     }
 
     [HttpPatch("{id:int:min(1)}/activate")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult ActivateUser(int id)
     {
-        var user = _users.SingleOrDefault(x => x.Id == id);
+        var user = _database.FindUser(id);
 
         if (user is null)
         {
@@ -69,10 +79,13 @@ public class UsersController : ControllerBase
         return NoContent();
     }
 
-    [HttpPatch("{id:int:min(1)}/activate")]
+    [HttpPatch("{id:int:min(1)}/deactivate")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public ActionResult DeactivateUser(int id)
     {
-        var user = _users.SingleOrDefault(x => x.Id == id);
+        var user = _database.FindUser(id);
 
         if (user is null)
         {

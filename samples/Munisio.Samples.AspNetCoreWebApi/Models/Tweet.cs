@@ -11,8 +11,8 @@ public class Tweet : HateoasObject
     public int Id { get; private set; }
     public string Text { get; private set; }
     public int UserId { get; private set; }
-    public int Retweets { get; private set; }
-    public int Likes { get; private set; }
+    public int Retweets { get; set; }
+    public int Likes { get; set; }
     public bool IsDeleted { get; private set; }
 
     public Tweet(int id, string text, int userId)
@@ -28,6 +28,9 @@ public class Tweet : HateoasObject
     /// If the logic changes (for example, limiting tweet deletion to a max of 2000 retweets), you only need to update this code and all clients are magically updated.
     /// </remarks>
     public bool CanBeDeleted() => !IsDeleted && Retweets < 1000;
+    public bool CanBeLiked() => !IsDeleted;
+    public bool CanBeRetweeted() => !IsDeleted;
+
 
     public void Delete()
     {
@@ -37,5 +40,25 @@ public class Tweet : HateoasObject
         }
 
         IsDeleted = true;
+    }
+
+    public void Like()
+    {
+        if (!CanBeLiked())
+        {
+            throw new InvalidOperationException("Tweet can't be liked because it's deleted");
+        }
+
+        Likes++;
+    }
+
+    public void Retweet()
+    {
+        if (!CanBeRetweeted())
+        {
+            throw new InvalidOperationException("Tweet can't be retweeted because it's deleted");
+        }
+
+        Retweets++;
     }
 }
