@@ -18,7 +18,7 @@ public class TweetsController : ControllerBase
         _database = database;
     }
 
-    [HttpGet]
+    [HttpGet(Name = "GetTweets")]
     [ProducesResponseType(typeof(HateoasCollection<Tweet>), StatusCodes.Status200OK)]
     public ActionResult<HateoasCollection<Tweet>> GetTweets()
     {

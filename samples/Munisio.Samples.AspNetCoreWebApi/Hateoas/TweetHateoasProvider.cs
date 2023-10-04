@@ -1,4 +1,5 @@
-﻿using Munisio.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Munisio.Models;
 using Munisio.Samples.AspNetCoreWebApi.Database;
 using Munisio.Samples.AspNetCoreWebApi.Models;
 
@@ -19,9 +20,14 @@ public class TweetHateoasProvider :
     {
         var tweet = _database.GetTweet(model.Id);
 
-        model.AddLink("getTweets", "api/tweets");
+        // You can use the context.LinkGenerator property to generate links to endpoints.
+        // This way you do not need to hardcode them.
+        model.AddLink("getTweets", context.LinkGenerator.GetPathByName(context.HttpContext, "GetTweets", values: null)!);
+
+        // However, you can also use the route parameter to specify the route string itself!
         model.AddLink("getUser", $"api/users/{model.UserId}");
 
+        // Here's an example of a dynamic HATEOAS link that is only added if the action is possible.
         model
             .AddPatchLink("like", $"api/tweets/{tweet.Id}/like")
             .When(() => tweet.CanBeLiked());
