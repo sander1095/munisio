@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace Munisio
 {
@@ -10,7 +11,7 @@ namespace Munisio
     {
         HttpContext HttpContext { get; }
         ClaimsPrincipal User { get; }
-        IUrlHelper Url { get; }
+        LinkGenerator LinkGenerator { get; }
         IAuthorizationService AuthorizationService { get; }
 
         Task<bool> AuthorizeAsync(object resource, params IAuthorizationRequirement[] requirement);
