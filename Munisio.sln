@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munisio.Models", "src\Munis
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munisio.Test", "test\Munisio.Test\Munisio.Test.csproj", "{559B11A9-DC8A-4545-BA09-2232485238B6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munisio.Samples.AspNetCoreWebApi", "samples\Munisio.Samples.AspNetCoreWebApi\Munisio.Samples.AspNetCoreWebApi.csproj", "{0668D607-5174-4BD2-89CB-1908382A655E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{18383FE3-0C09-4E4C-BDC5-88795866DFF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,12 +47,17 @@ Global
 		{559B11A9-DC8A-4545-BA09-2232485238B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{559B11A9-DC8A-4545-BA09-2232485238B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{559B11A9-DC8A-4545-BA09-2232485238B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0668D607-5174-4BD2-89CB-1908382A655E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{559B11A9-DC8A-4545-BA09-2232485238B6} = {33CB9DB3-C743-4A8A-ADBE-56CB6666746E}
+		{0668D607-5174-4BD2-89CB-1908382A655E} = {18383FE3-0C09-4E4C-BDC5-88795866DFF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {074F6723-9E3B-45EC-85FE-4469DC435396}
