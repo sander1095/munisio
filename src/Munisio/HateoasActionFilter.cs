@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Routing;
 using Munisio.Models;
 
 namespace Munisio
@@ -19,10 +20,12 @@ namespace Munisio
     internal class HateoasActionFilter : IAsyncActionFilter
     {
         private readonly IAuthorizationService _authorizationService;
+        private readonly LinkGenerator _linkGenerator;
 
-        public HateoasActionFilter(IAuthorizationService authorizationService)
+        public HateoasActionFilter(IAuthorizationService authorizationService, LinkGenerator linkGenerator)
         {
             _authorizationService = authorizationService;
+            _linkGenerator = linkGenerator;
         }
 
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
@@ -60,7 +63,7 @@ namespace Munisio
                 return;
             }
 
-            provider.Enrich(new HateoasContext(context, _authorizationService), (dynamic)hateoasObject);
+            provider.Enrich(CreateHateoasContext(context), (dynamic)hateoasObject);
         }
 
         private async Task ApplyHateoasOnObjectAsync(IHateoasObject hateoasObject, ActionContext context)
@@ -73,7 +76,7 @@ namespace Munisio
                 return;
             }
 
-            await ((Task)provider.EnrichAsync(new HateoasContext(context, _authorizationService), (dynamic)hateoasObject)).ConfigureAwait(false);
+            await ((Task)provider.EnrichAsync(CreateHateoasContext(context), (dynamic)hateoasObject)).ConfigureAwait(false);
         }
 
         private void ApplyHateoasOnCollection(IEnumerable<IHateoasObject> collection, ActionContext context)
@@ -88,7 +91,7 @@ namespace Munisio
 
             foreach (var item in collection)
             {
-                provider.Enrich(new HateoasContext(context, _authorizationService), (dynamic)item);
+                provider.Enrich(CreateHateoasContext(context), (dynamic)item);
             }
         }
 
@@ -104,8 +107,11 @@ namespace Munisio
 
             foreach (var item in collection)
             {
-                await ((Task)provider.EnrichAsync(new HateoasContext(context, _authorizationService), (dynamic)item)).ConfigureAwait(false);
+                await ((Task)provider.EnrichAsync(CreateHateoasContext(context), (dynamic)item)).ConfigureAwait(false);
             }
         }
+
+        private HateoasContext CreateHateoasContext(ActionContext context) =>
+            new(context, _authorizationService, _linkGenerator);
     }
 }
