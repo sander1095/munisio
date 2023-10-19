@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a simple ASP.NET Core HATEOAS library that enables you to easily implement HATEOAS principles in your ASP.NET Core Web API projects. HATEOAS is a constraint of the REST architectural style that allows clients to navigate a web API by following hyperlinks contained in the responses.
+This is an ASP.NET Core HATEOAS library that enables you to easily implement HATEOAS principles in your ASP.NET Core Web API projects. HATEOAS is a constraint of the REST architectural style that allows clients to navigate a web API by following hyperlinks contained in the responses.
 
 ✨ The inspiration for this project was to use HATEOAS to remove duplicate business logic from your front-end by simply checking for the existence of links of the actions you want to perform instead. If this sounds interesting to you, you can [read this blog post](https://stenbrinke.nl/blog/reducing-duplicate-code-in-our-applications-using-hateoas/) for more information.
 
@@ -23,17 +23,20 @@ dotnet add package Munisio
 
 ### 2. Configuration
 
-In your Startup.cs file, configure the HATEOAS service:
+In your `Startup.cs` or wherever you can configure your `IServiceCollection`, configure the HATEOAS service:
 
 ```csharp
 using Munisio;
 
-public void ConfigureServices(IServiceCollection services)
+public class Startup
 {
-    // Add Munisio's Action Filter to your MVC pipeline
-    // so your DTO's can be filled with HATEOAS links
-    builder.Services.AddControllers(x => x.AddHateoas());
-    // ...
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // Add Munisio's Action Filter to your MVC pipeline
+        // so your DTO's can be filled with HATEOAS links
+        services.AddControllers(x => x.AddHateoas());
+        // ...
+    }
 }
 ```
 
@@ -42,17 +45,20 @@ Next, you need to tell Munisio where to find your HATEOAS providers. You can do 
 ```csharp
 using Munisio;
 
-public void ConfigureServices(IServiceCollection services)
+public class Startup
 {
-    // This is done in the previous step.
-    builder.Services.AddControllers(x => x.AddHateoas());
-
-    // Option 1:  Let Munisio search and register your providers automatically by searching the current assembly
-    // or pass the assemblies that contain your providers as an argument.
-    builder.Services.AddHateoasProviders(); 
-
-    // Option 2: Configure your providers yourself. Tweet is a DTO in this case.
-    services.AddTransient<IHateoasProvider<Tweet>, TweetHateoasProvider>();
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // This is done in the previous step.
+        services.AddControllers(x => x.AddHateoas());
+    
+        // Option 1: Let Munisio search and register your providers automatically by searching the current assembly
+        // or pass the assemblies that contain your providers as an argument.
+        services.AddHateoasProviders(); 
+    
+        // Option 2: Configure your providers yourself. Tweet is a DTO in this case.
+        services.AddTransient<IHateoasProvider<Tweet>, TweetHateoasProvider>();
+    }
 }
 ```
 
@@ -227,7 +233,6 @@ In order to do this, you'll need to return a `HateoasCollection<>` from your API
 
 ```csharp
 [HttpGet(Name = "GetTweets")]
-[ProducesResponseType(typeof(HateoasCollection<Tweet>), StatusCodes.Status200OK)]
 public ActionResult<HateoasCollection<Tweet>> GetTweets()
 {
     var tweets = _database.GetTweets();
