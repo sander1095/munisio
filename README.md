@@ -12,7 +12,7 @@ This is an ASP.NET Core HATEOAS library that enables you to easily implement HAT
 
 To get started with this library, follow these simple steps:
 
-### 1. Installation
+### 1. Installation 
 
 Install the package via NuGet Package Manager:
 
@@ -131,7 +131,7 @@ public class TweetHateoasProvider : IAsyncHateoasProvider<Tweet>
         await model
             .AddDeleteLink("delete", $"api/tweets/{model.Id}")
             .When(() => tweet.CanBeDeleted())
-            .WhenAsync(() => context.AuthorizeAsync(rubric, Operations.Delete)); // Note: Operations.Delete is custom!
+            .WhenAsync(() => context.AuthorizeAsync(model, Operations.Delete)); // Note: Operations.Delete is custom!
 
         model.AddPatchLink("retweet", context.LinkGenerator.GetPathByName(context.HttpContext, "Retweet", values: null)!);
     }
